@@ -63,7 +63,6 @@ obj <- rep(0, num_sources * num_markets)
   # This vector will be used to define the coefficients of the objective function.
   # It will be updated with the  shipping costs and investment costs later in the script.
 
-
 for (i in 1:num_sources) {
   for (j in 1:num_markets) {
     obj[(i - 1) * num_markets + j] <- shipping_cost_rail[i, j]
@@ -72,7 +71,7 @@ for (i in 1:num_sources) {
 # nested loops to convert a matrix, shipping_cost_rail, into a vector, obj
 
 lp.control(lp_model_1, sense = "min") 
-# modify  control parameters of an LP, for instance "sense" of the model to min
+# modify control parameters of an LP, for instance "sense" of the model to min
 # sense could take max", "min", and "="
 
 set.objfn(lp_model_1, obj)
@@ -103,7 +102,7 @@ for (j in 1:num_markets) { # loop over each market to add 5 constraints for them
   # 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, # Market 3
   # 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, # Market 4
   # 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1  # Market 5
-  add.constraint(lp_model_1, constr, "<=", demand[j]) # adds constraint to LP model
+  add.constraint(lp_model_1, constr, "=", demand[j]) # adds constraint to LP model
 }
 
 # Solve the LP problem
@@ -158,7 +157,7 @@ for (j in 1:num_markets) {
   for (i in 1:num_sources) {
     constr[(i - 1) * num_markets + j] <- 1
   }
-  add.constraint(lp_model_2, constr, "<=", demand[j])
+  add.constraint(lp_model_2, constr, "=", demand[j])
 }
 
 # Solve the LP problem for Option 2
@@ -215,7 +214,7 @@ for (j in 1:num_markets) {
   for (i in 1:num_sources) {
     constr[(i - 1) * num_markets + j] <- 1
   }
-  add.constraint(lp_model_3, constr, "<=", demand[j])
+  add.constraint(lp_model_3, constr, "=", demand[j])
 }
 
 # Solve the LP problem for Option 3
