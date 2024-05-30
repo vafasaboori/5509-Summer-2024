@@ -185,8 +185,8 @@ cat("W =", best_solution[2], "\n")
 cat("P =", best_p, "\n")
 
 # In class Assignment: Normal Distribution -----
-# hours required per door is normal (mean=3.2, sd=0.7)
-# hours required per window is uniform (mean=2.3, sd=0.6)
+# hours required per door is normal (mean=3.0, sd=0.5)
+# hours required per window is uniform (mean=2.0, sd=0.5)
 
 # Solution for In Class Exercise ----
 
