@@ -67,7 +67,7 @@ options(scipen = 0, digits = 3)
 round(sens$duals.from, 3)
 round(sens$duals.to, 3)
 
-# Additional Steps (Robust) In Class Exercise (Liquid Detergent) ----
+# Additional Steps (Robust) In Class Exercise (Liquid Detergent Cionstraint) ----
 # What if the estimates for increase in sales of liquid detergent are uncertain? ----
-# range of uncertainty for cost per TV ad is uniform (2.5–3.5)
-# range of uncertainty for cost per Print Media Ad is uniform (1.5–2.5)
+# range of uncertainty for increase in sales per TV is uniform (2.5–3.5)
+# range of uncertainty for increase in sales per Print Media is uniform (1.5–2.5)
